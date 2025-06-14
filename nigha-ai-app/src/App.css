@@ -97,3 +97,63 @@ footer {
   color: white;
   padding: 20px;
 }
+
+/* Animations.css */
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+.slide-down {
+  animation: slideDown 1.2s ease-out forwards;
+}
+
+.zoom-in {
+  animation: zoomIn 1.3s ease-in-out forwards;
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.glow-button {
+  background-color: #2e86de;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  animation: pulse 2s infinite;
+  cursor: pointer;
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 10px #2e86de;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(46, 134, 222, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(46, 134, 222, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(46, 134, 222, 0); }
+}
