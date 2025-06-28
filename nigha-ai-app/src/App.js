@@ -25,17 +25,32 @@ function App() {
       </section>
 
       <section className="features" id="features">
-        <div className="feature-card">
-          <h3>Real-Time Monitoring</h3>
-          <p>Track all AI-generated content and flag risky outputs in real time.</p>
+        <div className="feature-card sos">
+          <h3>SOS Button</h3>
+          <p>Instantly send alerts with location and audio when in distress.</p>
         </div>
-        <div className="feature-card">
-          <h3>Custom Policy Editor</h3>
-          <p>Define and manage your AI safety rules with an intuitive interface.</p>
+        <div className="feature-card voice">
+          <h3>Voice Stress Detection</h3>
+          <p>AI listens for stress in voice and triggers automatic actions.</p>
+          <div className="voice-wave">
+            <div></div>
+          </div>
         </div>
-        <div className="feature-card">
+        <div className="feature-card geo">
+          <h3>Geo-fencing (Google Maps)</h3>
+          <p>Alerts you when entering unsafe zones based on real-time data.</p>
+        </div>
+        <div className="feature-card incident">
           <h3>Incident Reporting</h3>
-          <p>Quickly log and manage safety incidents with detailed context and history.</p>
+          <p>Log and manage safety incidents with full context and history.</p>
+        </div>
+        <div className="feature-card anonymous">
+          <h3>Anonymous Reporting</h3>
+          <p>Report issues securely without revealing your identity.</p>
+        </div>
+        <div className="feature-card chatbot">
+          <h3>AI Chatbot</h3>
+          <p>Get 24/7 support with our smart assistant trained for emergencies.</p>
         </div>
       </section>
 
