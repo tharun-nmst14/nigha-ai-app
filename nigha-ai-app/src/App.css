@@ -1,18 +1,29 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(120deg, #f0f4ff, #e0eafc);
+  background-size: cover;
+  animation: backgroundFade 15s ease infinite alternate;
+}
+
+@keyframes backgroundFade {
+  0% { background: linear-gradient(120deg, #e0eafc, #f0f4ff); }
+  100% { background: linear-gradient(120deg, #f0f4ff, #e0eafc); }
 }
 
 .App {
   text-align: center;
 }
 
+/* Header */
 .app-header {
   background-color: #282c34;
   padding: 20px;
   color: white;
+  animation: slideDown 1.2s ease-out;
 }
 
+/* Navbar */
 .navbar {
   background-color: #333;
   overflow: hidden;
@@ -23,115 +34,102 @@ body {
   padding: 14px 20px;
   text-decoration: none;
   display: inline-block;
+  transition: background 0.3s ease;
 }
 
 .navbar a:hover {
   background-color: #575757;
 }
 
+/* Hero Section */
 .hero {
-  padding: 60px 20px;
+  padding: 80px 20px;
   background-color: #f4f4f4;
+  animation: fadeInUp 1s ease-out;
 }
 
 .hero h2 {
-  font-size: 36px;
+  font-size: 38px;
   margin-bottom: 20px;
 }
 
 .hero p {
   font-size: 18px;
-  max-width: 700px;
+  max-width: 720px;
   margin: auto;
   line-height: 1.6;
 }
 
 .hero button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  font-size: 16px;
+  margin-top: 30px;
+  padding: 14px 30px;
+  font-size: 17px;
   cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #2e86de;
+  color: white;
+  animation: pulse 2s infinite;
 }
 
+.hero button:hover {
+  box-shadow: 0 0 15px #2e86de;
+  transform: scale(1.05);
+}
+
+/* Features Section */
 .features {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 50px 20px;
   background-color: #eaeaea;
 }
 
 .feature-card {
   background: white;
   margin: 10px;
-  padding: 20px;
-  width: 280px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 25px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
-.feature-card h3 {
-  margin-top: 0;
+.feature-card:hover {
+  transform: translateY(-8px) scale(1.02);
 }
 
+/* About Section */
 .about {
   background-color: #f9f9f9;
-  padding: 40px 20px;
+  padding: 50px 20px;
   text-align: center;
+  animation: fadeIn 1.5s ease-in;
 }
 
 .about h2 {
-  font-size: 28px;
-  margin-bottom: 16px;
+  font-size: 30px;
+  margin-bottom: 18px;
 }
 
 .about p {
-  max-width: 700px;
+  max-width: 720px;
   margin: auto;
   font-size: 18px;
   line-height: 1.6;
 }
 
+/* Footer */
 footer {
   background-color: #333;
   color: white;
-  padding: 20px;
+  padding: 25px 20px;
+  text-align: center;
+  font-size: 14px;
 }
 
-/* Animations.css */
-
-.fade-in {
-  animation: fadeIn 1.5s ease-in forwards;
-}
-
-.slide-down {
-  animation: slideDown 1.2s ease-out forwards;
-}
-
-.zoom-in {
-  animation: zoomIn 1.3s ease-in-out forwards;
-}
-
-.fade-in-up {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;
-}
-
-.glow-button {
-  background-color: #2e86de;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  animation: pulse 2s infinite;
-  cursor: pointer;
-}
-
-.glow-button:hover {
-  box-shadow: 0 0 10px #2e86de;
-}
-
-/* Keyframes */
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -140,11 +138,6 @@ footer {
 @keyframes slideDown {
   from { transform: translateY(-30px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes zoomIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
 }
 
 @keyframes fadeInUp {
