@@ -1,29 +1,18 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(120deg, #f0f4ff, #e0eafc);
-  background-size: cover;
-  animation: backgroundFade 15s ease infinite alternate;
-}
-
-@keyframes backgroundFade {
-  0% { background: linear-gradient(120deg, #e0eafc, #f0f4ff); }
-  100% { background: linear-gradient(120deg, #f0f4ff, #e0eafc); }
+  font-family: Arial, sans-serif;
 }
 
 .App {
   text-align: center;
 }
 
-/* Header */
 .app-header {
   background-color: #282c34;
   padding: 20px;
   color: white;
-  animation: slideDown 1.2s ease-out;
 }
 
-/* Navbar */
 .navbar {
   background-color: #333;
   overflow: hidden;
@@ -34,157 +23,136 @@ body {
   padding: 14px 20px;
   text-decoration: none;
   display: inline-block;
-  transition: background 0.3s ease;
 }
 
 .navbar a:hover {
   background-color: #575757;
 }
 
-/* Hero Section */
 .hero {
-  padding: 80px 20px;
+  padding: 60px 20px;
   background-color: #f4f4f4;
-  animation: fadeInUp 1s ease-out;
 }
 
 .hero h2 {
-  font-size: 38px;
+  font-size: 36px;
   margin-bottom: 20px;
 }
 
 .hero p {
   font-size: 18px;
-  max-width: 720px;
+  max-width: 700px;
   margin: auto;
   line-height: 1.6;
 }
 
 .hero button {
-  margin-top: 30px;
-  padding: 14px 30px;
-  font-size: 17px;
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
   cursor: pointer;
-  border: none;
-  border-radius: 6px;
   background-color: #2e86de;
   color: white;
-  animation: pulse 2s infinite;
+  border: none;
+  border-radius: 4px;
+  transition: 0.3s;
 }
 
 .hero button:hover {
-  box-shadow: 0 0 15px #2e86de;
-  transform: scale(1.05);
+  background-color: #1b4f72;
 }
 
-/* Features Section */
 .features {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 50px 20px;
+  padding: 40px 20px;
   background-color: #eaeaea;
 }
 
-/* Add individual colors for each feature */
-.feature-card.sos {
-  background: #ffe5e5;
-  border-left: 5px solid #ff4d4d;
-}
-
-.feature-card.voice {
-  background: #e0f7fa;
-  border-left: 5px solid #00acc1;
+.feature-card {
+  margin: 10px;
+  padding: 20px;
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  color: white;
+  animation: fadeInUp 1s ease-out forwards;
   position: relative;
+  transition: transform 0.3s ease;
 }
 
-.feature-card.geo {
-  background: #fff3e0;
-  border-left: 5px solid #fb8c00;
+.feature-card:hover {
+  transform: scale(1.05);
 }
 
-.feature-card.incident {
-  background: #ede7f6;
-  border-left: 5px solid #673ab7;
-}
+/* Unique Feature Colors */
+.sos { background: #e74c3c; }
+.voice { background: #8e44ad; }
+.geo { background: #16a085; }
+.incident { background: #f39c12; }
+.anonymous { background: #2c3e50; }
+.chatbot { background: #2980b9; }
 
-.feature-card.anonymous {
-  background: #f3e5f5;
-  border-left: 5px solid #ba68c8;
-}
-
-.feature-card.chatbot {
-  background: #e8f5e9;
-  border-left: 5px solid #43a047;
-}
-
-/* Voice animation effect */
 .voice-wave {
   width: 100%;
   height: 40px;
-  background: linear-gradient(90deg, #00acc1, transparent);
-  animation: waveAnim 1s infinite linear;
-  margin-top: 10px;
-  border-radius: 5px;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.voice-wave div,
+.voice-wave::before,
+.voice-wave::after {
+  content: '';
+  width: 6px;
+  background: white;
+  animation: waveAnim 1s infinite ease-in-out;
+}
+
+.voice-wave div {
+  height: 30px;
+  animation-delay: 0.2s;
+}
+
+.voice-wave::after {
+  height: 20px;
+  animation-delay: 0.4s;
 }
 
 @keyframes waveAnim {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
+  0%, 100% { height: 20px; }
+  50% { height: 40px; }
 }
 
-
-/* About Section */
 .about {
   background-color: #f9f9f9;
-  padding: 50px 20px;
+  padding: 40px 20px;
   text-align: center;
-  animation: fadeIn 1.5s ease-in;
 }
 
 .about h2 {
-  font-size: 30px;
-  margin-bottom: 18px;
+  font-size: 28px;
+  margin-bottom: 16px;
 }
 
 .about p {
-  max-width: 720px;
+  max-width: 700px;
   margin: auto;
   font-size: 18px;
   line-height: 1.6;
 }
 
-/* Footer */
 footer {
   background-color: #333;
   color: white;
-  padding: 25px 20px;
-  text-align: center;
-  font-size: 14px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  padding: 20px;
 }
 
 @keyframes fadeInUp {
   from { transform: translateY(30px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(46, 134, 222, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(46, 134, 222, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(46, 134, 222, 0); }
 }
