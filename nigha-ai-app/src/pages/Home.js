@@ -7,6 +7,11 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
+    <header className="app-header">
+  <img src="/logo.png" alt="NIGHA Logo" className="logo" />
+  <h1>NIGHA - AI Safety Monitoring</h1>
+    </header>
+
     <section className="features" id="features">
       <div className="feature-card sos" onClick={() => navigate('/sos')}>
         <h3>SOS Button</h3>
